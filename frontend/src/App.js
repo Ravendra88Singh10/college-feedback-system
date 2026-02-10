@@ -12,7 +12,7 @@ function App() {
 
   const submit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/feedback", form);
+    await axios.post("https://college-feedback-system-9tsy.onrender.com", form);
     alert("Feedback Submitted!");
   };
 
