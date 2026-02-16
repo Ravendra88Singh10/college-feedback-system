@@ -1,16 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const Feedback = require("../models/Feedback");
+const auth = require("../middleware/auth");
 
-// POST feedback
-router.post("/", async(req,res)=>{
+// POST feedback (PROTECTED)
+router.post("/", auth, async (req, res) => {
   const fb = new Feedback(req.body);
   await fb.save();
-  res.json({message:"Feedback saved"});
+  res.json({ message: "Feedback saved" });
 });
 
-// GET feedback
-router.get("/", async(req,res)=>{
+// GET feedback (optional: keep public or protect later)
+router.get("/", async (req, res) => {
   const data = await Feedback.find();
   res.json(data);
 });

@@ -8,6 +8,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+
 // MongoDB connect
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>console.log("MongoDB Connected"))
@@ -19,7 +21,9 @@ app.get("/", (req,res)=>{
 });
 
 // Routes
+app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/feedback", require("./routes/feedbackRoutes"));
+
 
 const PORT = process.env.PORT || 5000;
 

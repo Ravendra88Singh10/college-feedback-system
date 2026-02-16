@@ -1,58 +1,40 @@
-/* Remove default spacing */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* Full screen animated background */
+/* Full screen gradient */
 body {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  background: linear-gradient(-45deg, #667eea, #764ba2, #6dd5ed, #2193b0);
-  background-size: 400% 400%;
-  animation: gradientBG 12s ease infinite;
-}
-
-/* Gradient animation */
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Fullscreen container */
-.container {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Center wrapper */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
 /* Glass card */
 .card {
-  backdrop-filter: blur(15px);
   background: rgba(255,255,255,0.15);
-  padding: 40px;
-  width: 350px;
+  backdrop-filter: blur(12px);
+  padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  text-align: center;
+  width: 100%;
+  max-width: 400px;
   color: white;
-  animation: fadeIn 1s ease;
-}
-
-/* Fade animation */
-@keyframes fadeIn {
-  from {opacity:0; transform: translateY(20px);}
-  to {opacity:1; transform: translateY(0);}
-}
-
-h2 {
-  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
 /* Inputs */
@@ -60,39 +42,38 @@ input, textarea {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
   outline: none;
-  font-size: 14px;
-  background: rgba(255,255,255,0.25);
-  color: white;
+  font-size: 16px;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #eee;
-}
-
-input:focus, textarea:focus {
-  box-shadow: 0 0 10px #fff;
-}
-
-/* Button */
+/* Buttons */
 button {
   width: 100%;
   padding: 12px;
-  margin-top: 15px;
-  border-radius: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
   border: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(45deg,#ff512f,#dd2476);
+  background: #ff7b00;
   color: white;
+  font-size: 16px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
 button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 15px rgba(255,255,255,0.6);
+  background: #ff9500;
+  transform: scale(1.05);
+}
+
+.logout {
+  background: crimson;
+}
+
+/* Mobile */
+@media (max-width:500px){
+  .card{
+    padding:20px;
+  }
 }
