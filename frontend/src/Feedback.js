@@ -17,7 +17,7 @@ function Feedback({ setIsLoggedIn }) {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/feedback",
+        "https://college-feedback-system-9tsy.onrender.com/api/feedback",
         formData,
         {
           headers: {
