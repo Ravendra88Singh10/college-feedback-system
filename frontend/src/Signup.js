@@ -10,7 +10,7 @@ function Signup({ setIsLoginPage }) {
   const registerUser = async () => {
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://college-feedback-system-9tsy.onrender.com/api/auth/signup",
         { name,email,password }
       );
 
